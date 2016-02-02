@@ -15,6 +15,10 @@ class ProductosController < ApplicationController
   	redirect_to productos_path
   end
 
+  def edit
+  	
+  end
+
   private
   	def producto_params
     	params.require(:producto).permit(:codigo, :nombre, :stock, :precio, :descripcion)

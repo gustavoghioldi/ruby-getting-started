@@ -39,7 +39,7 @@
     <td><%= row.nombre %></td>
     <td><%= row.precio %></td>
     <td><%= row.stock %></td>
-    <td><a href="">view</a> / <a href="">delete</a> / <a href="/productos_form?action=PUT&id={{row.id}}">edit</a></td>
+    <td><a href="">view</a> / <a href="">delete</a> / <a href="/productos/<%= row.id %>/edit">edit</a> / <a href="">publish</a></td>
     </tr>
   <% end %>
 
@@ -51,7 +51,11 @@
 </div>
 
 <script>
+var data_table = $("#example").DataTable();
+
 function myfunction(){
-  var table = $("#example").DataTable();
+  if(!data_table){
+  $("#example").DataTable();
+}
 }
 </script>
