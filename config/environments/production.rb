@@ -75,4 +75,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  #my_end_point
+  config.api_server_url = "http://esocialcommerce.devteam.com.ar/"
 end
+

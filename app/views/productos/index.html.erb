@@ -1,0 +1,18 @@
+<h1>Productos#index</h1>
+<p>Find me in app/views/productos/index.html.erb</p>
+
+<h1>Listing articles</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @productos.each do |article| %>
+    <tr>
+      <td><%= article.id %></td>
+      <td><%= article.nombre %></td>
+    </tr>
+  <% end %>
+</table>

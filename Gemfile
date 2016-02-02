@@ -32,6 +32,7 @@ gem 'spring',        group: :development
 
 gem 'puma'
 
+gem 'active_rest_client'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

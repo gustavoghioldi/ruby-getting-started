@@ -34,4 +34,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  #my_end_point
+  config.api_server_url = "http://esocialcommerce.devteam.com.ar/"
 end
