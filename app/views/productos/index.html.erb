@@ -1,18 +1,52 @@
 <h1>Productos#index</h1>
 <p>Find me in app/views/productos/index.html.erb</p>
 
-<h1>Listing articles</h1>
+<div class="col-sm-12 jumbotron">
+<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+  <thead><tr>
+    <td><p>id</p></td>
+    <td>codigo</td>
+    <td>nombre</td>
+    <td>precio</td>
+    <td>stock</td>
+    <td>acciones</td>
+    </tr>
 
-<table>
+  </thead>
+  <tfoot>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <td>id</td>
+    <td>codigo</td>
+    <td>nombre</td>
+    <td>precio</td>
+    <td>stock</td>
+    
+    <td>acciones</td>
   </tr>
-
-  <% @productos.each do |article| %>
+  </tfoot>
+  <tbody>
+  <% @productos.each do |row| %>
     <tr>
-      <td><%= article.id %></td>
-      <td><%= article.nombre %></td>
+    <td><%= row.id %></td>
+    <td><%= row.codigo %></td>
+    <td><%= row.nombre %></td>
+    <td><%= row.precio %></td>
+    <td><%= row.stock %></td>
+    <td><a href="">view</a> / <a href="">delete</a> / <a href="/productos_form?action=PUT&id={{row.id}}">edit</a></td>
     </tr>
   <% end %>
+  </tbody>
+
+
 </table>
+<a href="/productos/new" class="btn btn-primary">Nuevo</a>
+</div>
+<script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+  } );
+</script>
