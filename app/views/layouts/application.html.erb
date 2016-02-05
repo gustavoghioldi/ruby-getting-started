@@ -21,7 +21,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/login">login</a>
+                    <% if current_user %>
+                    <a href="/users/sign_out">Sign Out</a>
+                    <% end %>
                 </li>
                 <li>
                     <a href="/productos">Mis Productos</a>
