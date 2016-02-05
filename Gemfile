@@ -39,3 +39,4 @@ gem 'active_rest_client'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'devise'
