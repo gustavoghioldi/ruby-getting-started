@@ -32,10 +32,17 @@ gem 'spring',        group: :development
 
 gem 'puma'
 
-gem 'active_rest_client'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#personales agregardas por gustavo ghioldi
+#creacion automaticas de crud
+gem 'railties'
+
+#modelo desde un api rest
+gem 'active_rest_client'
+
 
