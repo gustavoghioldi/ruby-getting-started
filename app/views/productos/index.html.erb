@@ -1,6 +1,6 @@
 
 <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js" onload="myfunction()"></script>
+<script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
@@ -36,28 +36,37 @@
   <tbody>
   <% @productos.each do |row| %>
     <tr>
-    <td><%= row.id %></td>
-    <td><%= row.codigo %></td>
-    <td><%= row.nombre %></td>
-    <td><%= row.precio %></td>
-    <td><%= row.stock %></td>
-    <td><a href="">view</a> / <a href="">delete</a> / <a href="/productos/<%= row.id %>/edit">edit</a> / <a href="">publish</a></td>
-    </tr>
-  <% end %>
-
-  </tbody>
-
+      <td><%= row.id %></td>
+      <td><%= row.codigo %></td>
+      <td><%= row.nombre %></td>
+      <td><%= row.precio %></td>
+      <td><%= row.stock %></td>
+      <td><a href="">view</a> / <a href="">delete</a> / <a href="/productos/<%= row.id %>/edit">edit</a> / <a href="/publish/new?idProduct=<%= row.id %>">publish</a></td>
+                </tr>
+    <% end %>
+            
+              </tbody>
+            ""
 
 </table>
 <a href="/productos/new" class="btn btn-primary">Nuevo</a>
 </div>
 
 <script>
-var data_table = $("#example").DataTable();
+$(function(){
+  $(".publish").click(function() {
+        var elem = $(this);
+        var id = elem.data("id");
+          
+  });
+    var data_table = $("#example").DataTable();
+  
+    function myfunction(){
+      if(!data_table){
+        $("#example").DataTable();
+      }
+    }
+    myfunction();
+});
 
-function myfunction(){
-  if(!data_table){
-  $("#example").DataTable();
-}
-}
 </script>

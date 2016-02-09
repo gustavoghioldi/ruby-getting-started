@@ -1,0 +1,71 @@
+<div class="col-md-4">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Medios de Pago</div>
+		<div class="panel-body">
+			<form role="form" data-type="payment">
+			<% @payments.each do |payment| %>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="checkbox">
+			    			<label><input type="checkbox"> <img src="<%= payment.img %>" class="img-responsive" style="max-height:3.5em"></img></label>
+			  			</div>
+			  		</div>
+	  			</div>
+		 	<% end %>
+		 	</form>
+		</div>
+	</div>
+</div>
+<div class="col-md-4">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Market Places</div>
+		<div class="panel-body">
+			<form role="form" data-type="market-place">
+			<% @payments.each do |payment| %>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="checkbox">
+			    			<label><input type="checkbox"> <img src="<%= payment.img %>" class="img-responsive" style="max-height:3.5em"></img></label>
+			  			</div>
+			  		</div>
+	  			</div>
+		 	<% end %>
+		 	</form>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-4">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Redes Sociales</div>
+		<div class="panel-body">
+					<form role="form" data-type="network">
+					<% @networks.each do |network| %>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="checkbox">
+					    			<label><input type="checkbox"> <img src="<%= network.img %>" class="img-responsive" style="max-height:3.5em"></img></label>
+					  			</div>
+					  		</div>
+			  			</div>
+				 	<% end %>
+				 	</form>
+				</div>
+			</div>
+		</div>
+		
+		<button id="submit">guardar</button> 
+		<script type="text/javascript">
+			$(function(){
+				$("#submit").click(function(){
+					var result = [];
+					$("form").each(function(i,e){
+						result[i]={};
+						var elem = $(e);
+						result[i].select = elem.data("type");
+						result[i].opt = elem.find("input:checked").val();
+					});
+					console.log(result);
+				});
+			});
+</script>

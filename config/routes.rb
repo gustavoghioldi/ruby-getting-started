@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   get 'productos/index'
   
-
+  resources :publish
   resources :widgets
   resources :productos
 
